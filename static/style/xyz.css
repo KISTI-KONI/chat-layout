@@ -1,0 +1,233 @@
+body {
+    height:100vh;
+    width:100vw;
+    margin:0;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    overflow: hidden;
+    color:#b4b4b4;
+}
+p{
+    padding:0;
+    margin:0;
+    font-size : 15px;
+    color:#b4b4b4;
+}
+.scroll-box{
+    height:calc(100%-200px);
+    overflow-y:scroll;
+}
+.scroll-box::-webkit-scrollbar{
+    position: relative;
+    right: 0;
+    width:10px;
+}
+.scroll-box::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    background: rgb(133, 133, 133);
+}
+.scroll-box::-webkit-scrollbar-track{
+    background: #303030;
+}
+.cursor-pointer {
+	cursor:pointer;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    height:100%;
+}
+.side-nav{
+    display: block;
+    height: 100%;
+    width:236px;
+    padding: 12px;
+    background: #242424;
+}
+.side-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:32px;
+    margin-bottom: 50px;
+    
+}
+.nav-title{
+    color:#888888;
+    font-size: 14px;
+    margin : 10px;
+}
+.home{
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+.main-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width:calc(100% - 260px);
+    background:#303030;
+    overflow-y: hidden;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    padding:12px;
+    position: sticky;
+    top:0;
+    background:#303030;
+}
+.main-page{
+    margin:1rem;
+    max-height: calc(100%-104px);
+    overflow-y: hidden;
+    background:#303030;
+    color:black;
+}
+
+.content-title{
+    font-size: 2rem;
+    color:#b4b4b4;
+}
+
+.retrieval-box{
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #b4b4b4;
+}
+
+
+.input-line{
+    width: 100%;
+}
+.input-line .input{
+    width:80%;
+    border: 2px solid black;
+    border-radius: 25px;
+    outline: none;
+    padding: 6px;
+    background-color: white;
+}
+.input-line .input input{
+    background-color: white;
+    box-sizing:border-box;
+    padding: 0;
+    border : 0;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow:hidden;
+    resize : none;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: .25rem .75rem;
+    color:#111;
+}
+.btn {    
+    border : 0;
+    border-radius: 25px;
+    padding: 15px 20px;
+    background: black;
+    color: aliceblue;
+}
+.result-box{
+    margin-top: 30px;
+    border-radius: 15px;
+    background: aliceblue;
+    padding: 30px;
+}
+.table-header{
+    border-bottom: 2px solid #242424;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.row{
+    border: 1px solid black;
+    min-height:50px;
+}
+.col {
+    text-align: center;
+    align-content: center;
+    max-width : 50%;
+}
+.dialogue{
+    width: 100%;
+}
+.dialogue .iid{
+    display: flex;
+    flex-direction: column;
+    width:5%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.dialogue .main-box{
+    max-width: 79%;
+    flex: 1 0 auto;
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;   
+}
+.dialogue .main-box .bordering{
+    padding:1rem;
+    border: 1px solid black;
+    box-sizing: border-box;   
+}
+.dialogue .main-box .instruction{
+    display: flex;
+    justify-content: left;
+}
+.dialogue .main-box .output{
+    display: flex;
+    justify-content: right;
+}
+.good{
+    background: #d7ffca;
+}
+.bad{
+    background: #ffc6c6;
+}
+.dialogue .date-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:.25rem;
+    width:16%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.pagebox{
+    margin-top: 25px;
+    justify-content: center;
+}
+.pagenum{
+    padding:3px;
+    margin: 0 2px;
+    border-radius: 4px;
+}
+.pagenum.now{
+    background-color: black;
+    color: aliceblue;
+    cursor: default;
+}
+.flex{
+    display: flex;   
+}
+.flex-jc-between{
+    justify-content: space-between;
+}
+
+.mr-3{
+    margin-right: 1.5rem;
+}

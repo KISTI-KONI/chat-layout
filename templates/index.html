@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <title>KONI</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/toastr.min.css')}}">
+
+    <script src="https://kit.fontawesome.com/43825b270f.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='js/showdown.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='js/toastr.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/index.js')}}"></script>
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="side-nav">
+            <div class="side-header">
+                <div class="collapse-side new-btn cursor-pointer">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="nav-box">
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <div class="popup " > <!--hidden_test-->
+                <div class="pop-container">
+                    <div class="pop-title">
+                        <div class="f-2">KISTI KONI 사용 안내</div>
+                        <div class="f-2 closed cursor-pointer">X</div>
+                    </div>
+                    <div class="contents">
+                        <p class="f-1">KONI(8B LLM) + RAG</p>
+                        <p class="f-1">Red teaming</p>
+                        <br />
+                        <div>
+                            <p><b>-의도: </b></p>
+                            <p class="ml-3"> Red teaming은 언어 모델의 잠재적 취약성과 부적절성, 오류 등을 사전에 테스트하여 모델의 신뢰성과 성능을 향상시키기 위한 내부 테스트를 의미합니다.</p>
+                            <p class="ml-3">초거대AI연구단은 올해 7월 KONI의 공식 모델 배포에 앞서 원내 구성원들을 대상으로 2차례에 걸쳐 Red teaming을 수행합니다.</p>
+                            <p class="ml-3">Red Teaming을 통해 얻어진 여러분들의 피드백은 보다 강건하고, 정확한 품질의 출력을 낼수 있도록 KONI를 개선하는데 활용합니다.</p>
+                            <br />
+                            <p><b>-사용자 입력: </b></p>
+                            <p class="ml-3">과학기술 관련 법령, 지침, 규정을 포함한 다양한 질의에 대한 응답이 가능합니다 .</p>
+                            <p class="ml-3">질문 앞에 !를 붙이면 바로 RAG(검색 증강 생성) 기반 과학기술 관련 법령, 지침, 규정 질의 응답이 가능합니다. </p>
+                            <p class="ml-3">예시) 출산휴가 규정에 대해 알고 싶은 경우, <b>!출산휴가 규정에 대해 알려줘</b> 와 같이 입력하세요.</p>
+                            <p class="ml-3">답변이 괜찮은 경우, <i class="fa-regular fa-thumbs-up"></i> <span style="font-size: 10px;color: #454545;">click</span></p>
+                            <p class="ml-3">그렇지 않은 경우, <i class="fa-regular fa-thumbs-down"></i> <span style="font-size: 10px;color: #454545;">click</span> </p>
+                            <p class="ml-3">바람직한 답변의 내용이나 의견을 기재해주세요. <i class="fa-regular fa-comment"></i></p>
+                            <br />
+                            <p><b>-일정 </b></p>
+                            <p class="ml-3">7/1  ~ 7/12 국가과학기술데이터본부, 기획본부, 경영지원본부 대상</p>
+                            <p class="ml-3">7/15 ~ 7/26 연구원 전체 대상</p>
+                            <br />
+                            <p><b>- 주의사항</b></p>
+                            <p class="ml-3">테스트 기반 동안 부정확한 출력이나 장애가 발생할 수 있으며, KONI가 출력하는 정보에 대한 사실 여부는 보장해드리지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-box">
+                <div class="main-header">
+                    <div class="flex-forward">
+                        <div class="collapse fold-button">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="collapse new">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div class="home cursor-pointer">KONI</div>
+                    </div>
+                    <div class="notice"><i class="fa-solid fa-bullhorn cursor-pointer"></i></div>
+                </div>
+                <div class="main-page">
+                    <div class="chat">
+                        <div class="koni-output" id="222" style="display: none;"> 
+                            <!-- style="display: none;" -->
+                            <div class="icon-box">
+                                <div class="icon">
+                                    <img src="/static/img/koni.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="initial-chat">
+                <div class="init-box">
+                    <div class="init-logo">
+                        <div class="w-150 icon ">
+                            <img src="/static/img/koni.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="init-ex-box">
+                        <div class="init-ex" id="ex1">
+                            <div class="init-ex-logo">
+                                <i></i>
+                            </div>
+                            <div class="init-ex-text"></div>
+                        </div>
+                        <div class="init-ex" id="ex2">
+                            <div class="init-ex-logo">
+                                <i></i>
+                            </div>
+                            <div class="init-ex-text">                               
+                            </div>
+                        </div>
+                        <div class="init-ex" id="ex3">
+                            <div class="init-ex-logo">
+                                <i></i>
+                            </div>
+                            <div class="init-ex-text"></div>
+                        </div>
+                        <div class="init-ex" id="ex4">
+                            <div class="init-ex-logo">
+                                <i></i>
+                            </div>
+                            <div class="init-ex-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-footer">
+                <div class="margin-auto">
+                    <div class="input-container">
+                        <div class="blank"></div>
+                        <div class="instruction-box">
+                            <textarea id="instruction" placeholder="메시지 KONI-Llama3" rows="1" ></textarea>
+                        </div>
+                        <div class="btn-box">
+                            <button class="btn-chat-info btn-chat" disabled>
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>KONI (Korean Open Natural Intelligence), developed by KISTI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

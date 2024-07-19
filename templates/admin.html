@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <title>KONI ADMIN</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style/xyz.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/toastr.min.css')}}">
+
+    <script src="https://kit.fontawesome.com/43825b270f.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='js/showdown.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='js/toastr.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/xyz.js')}}"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="side-nav">
+            <div class="side-header">
+            </div>
+            <div class="nav">
+                <div class="nav-box">
+                    <div class="nav-title">관리</div>
+                    <div onclick='move("user")' class="title cursor-pointer">
+                        사용자 관리
+                    </div>
+
+                    <div class="nav-title">분류</div>
+                    <div onclick='move("instruction")' class="title cursor-pointer">
+                        대화 전체 검색
+                    </div>
+                    <div onclick='move("good")' class="title cursor-pointer">
+                        좋아요 대화
+                    </div>
+                    <div onclick='move("bad")' class="title cursor-pointer">
+                        싫어요 대화
+                    </div>
+                    <div onclick='move("comment")' class="title cursor-pointer">
+                        피드백 코멘트
+                    </div>
+                    <div onclick='move("normal")' class="title cursor-pointer">
+                        지시문 검색(페이지 미적용)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <div class="scroll-box">
+                <div class="main-header">
+                    <div class="home cursor-pointer">KONI 통계</div>
+                    <div class="logout"><i class="fa-solid fa-right-from-bracket cursor-pointer"></i></div>
+                </div>
+                <div class="main-page">
+                    <div class="init-container">
+                        <div class="summary-box">
+                            <div class="title"></div>
+                            <div class="summary"></div>
+                        </div>
+                        <div class="summary-box">
+                            <div class="title"></div>
+                            <div class="summary"></div>
+                        </div>
+                        <div class="summary-box">
+                            <div class="title"></div>
+                            <div class="summary"></div>
+                        </div>
+                        <div class="summary-box">
+                            <div class="title"></div>
+                            <div class="summary"></div>
+                        </div>
+                    </div>
+                    <div class="content-title"></div>
+                    <div class="retrieval-box" >
+                        <div class="input-line flex flex-jc-between" style="margin-top:15px;">
+                            <div class="selbox"></div>
+                            <div class="input">
+                                <input type="text">
+                            </div>
+                            <div class="btn cursor-pointer">
+                                <a onclick="setRetrieval(1)">검색</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-box">
+                        <div class="table">                           
+                            <div class="table-header row flex flex-jc-between">
+                            </div>
+                            <div class="table-row">
+                            </div>
+                            
+                        </div>
+                        <div class="pagebox flex">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
